@@ -5,7 +5,8 @@ import os
 
 file_to_load = os.path.join("Resources", "election_results.csv")
 
-
+total_votes = 0
+candidates = []
 
 with open(file_to_load) as election_data:
 
@@ -18,6 +19,16 @@ with open(file_to_load) as election_data:
 
     headers = next(file_reader)
     print(headers)
+
+    for row in file_reader:
+        total_votes += 1
+        candidate_name = row[2]
+        if candidate_name not in candidates:
+            candidates.append(candidate_name)
+
+print(candidates)
+print(total_votes)
+
 
 
 

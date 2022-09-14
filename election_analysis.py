@@ -71,8 +71,13 @@ with open(file_to_save, "w") as txt_file:
     
     # Save the final vote count to the text file.
 
+
     txt_file.write(election_results)
 
+
+    # analysis of the election row by row
+
+    
     for candidate in candidate_votes:
 
         votes = candidate_votes[candidate]
@@ -88,9 +93,15 @@ with open(file_to_save, "w") as txt_file:
             winning_candidate = candidate
 
     
+    # write the results of the election by candidate to the text file
+
+
         candidate_results = (f"{candidate}: {vote_percentage:.1f}% ({votes:,})\n")
         txt_file.write(candidate_results)
         #print(f"{candidate}: {vote_percentage:.1f}% ({votes:,})\n")
+
+
+# this is for checking the results by printing them to the terminal
 
 winning_candidate_summary = (
     f"------------------------\n"
